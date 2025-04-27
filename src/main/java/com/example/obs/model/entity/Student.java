@@ -28,6 +28,6 @@ public class Student {
     @JoinColumn(name = "advisor_id")
     private Academic advisor;
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 9)
     private String studentNumber;
 }

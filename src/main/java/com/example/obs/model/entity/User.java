@@ -35,10 +35,10 @@ public class User {
     @Column(nullable = false)
     private LocalDate birthDate;
 
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 12)
     private String phone;
 
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(nullable = false, unique = true, length = 50)
     private String email;
 
     @Enumerated(EnumType.STRING)

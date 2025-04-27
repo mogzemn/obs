@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class UserCreateRequest {
 
     @NotBlank(message = "Şifre alanı boş olamaz")
-    @Size(min = 6, message = "Şifre en az 6 karakter olmalıdır")
+    @Size(min = 11, message = "Şifre en az 11 karakter olmalıdır")
     private String password;
 
     @NotBlank(message = "Ad alanı boş olamaz")
@@ -35,13 +35,13 @@ public class UserCreateRequest {
     private LocalDate birthDate;
 
     @NotBlank(message = "Telefon alanı boş olamaz")
-    @Size(max = 20, message = "Telefon 20 karakterden fazla olamaz")
+    @Size(max = 12, message = "Telefon 12 karakterden fazla olamaz")
     @Pattern(regexp = "^[0-9+\\s-]+$", message = "Geçersiz telefon formatı")
     private String phone;
 
     @NotBlank(message = "E-posta alanı boş olamaz")
     @Email(message = "Geçerli bir e-posta adresi giriniz")
-    @Size(max = 100, message = "E-posta 100 karakterden fazla olamaz")
+    @Size(max = 50, message = "E-posta 50 karakterden fazla olamaz")
     private String email;
 
     @NotNull(message = "Kullanıcı durumu boş olamaz")
