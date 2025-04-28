@@ -1,7 +1,9 @@
 package com.example.obs.business.requests;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FacultyCreateRequest {
-
+    @NotBlank(message = "Fakülte adı boş olamaz")
+    @Size(max = 100, message = "Fakülte adı 100 karakterden fazla olamaz")
     private String facultyName;
 
+    @NotBlank(message = "Fakülte kodu boş olamaz")
+    @Size(min = 2, max = 2, message = "Fakülte kodu tam olarak 2 karakter olmalıdır")
+    @Pattern(regexp = "^[0-9]+$", message = "Fakülte kodu sadece rakamlardan oluşmalıdır")
     private String facultyCode;
 
-    private Boolean isActive;
+    private Long deanId;
 
+    @NotNull(message = "Aktiflik durumu boş olamaz")
+    private Boolean isActive;
 }

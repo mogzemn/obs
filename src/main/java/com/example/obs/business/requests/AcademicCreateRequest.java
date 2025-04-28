@@ -1,18 +1,15 @@
 package com.example.obs.business.requests;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class AcademicCreateRequest {
-
     @Valid
     @NotNull(message = "Kullanıcı bilgileri boş olamaz")
     private UserCreateRequest user;
@@ -20,7 +17,8 @@ public class AcademicCreateRequest {
     @NotNull(message = "Bölüm ID boş olamaz")
     private Long departmentId;
 
-    @NotBlank(message = "Sicil numarası boş olamaz")
-    @Size(max = 11, message = "Sicil numarası 11 karakterden fazla olamaz")
-    private String registrationNumber;
+    private String title;
+
+    @NotNull(message = "Aktiflik durumu boş olamaz")
+    private Boolean isActive;
 }
