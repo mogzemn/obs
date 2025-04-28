@@ -1,6 +1,6 @@
 package com.example.obs.dateAccess;
 
-import org.apache.catalina.User;
+import com.example.obs.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
