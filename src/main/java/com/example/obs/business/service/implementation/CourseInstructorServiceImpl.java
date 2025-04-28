@@ -21,7 +21,6 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
     @Override
     public List<CourseInstructorResponse> getAll() {
-
        List<CourseInstructor> courseInstructors = courseInstructorRepository.findAll();
 
        List<CourseInstructorResponse> responses = courseInstructors.stream()
@@ -33,7 +32,6 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
     @Override
     public CourseInstructorResponse getById(Long id) {
-
         CourseInstructor courseInstructor = courseInstructorRepository.findById(id).orElseThrow();
 
         CourseInstructorResponse response = this.courseInstructorRepository.findById(id)
@@ -45,7 +43,6 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
     @Override
     public void add(CourseInstructorCreateRequest courseInstructorCreateRequest) {
-
         CourseInstructor courseInstructor = this.modelMapperService.forRequest()
                 .map(courseInstructorCreateRequest, CourseInstructor.class);
 
@@ -55,7 +52,6 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
     @Override
     public void update(CourseInstructorUpdateRequest courseInstructorUpdateRequest) {
-
         CourseInstructor courseInstructor = this.modelMapperService.forRequest()
                 .map(courseInstructorUpdateRequest, CourseInstructor.class);
 
@@ -64,7 +60,6 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
 
     @Override
     public void delete(Long id) {
-
         this.courseInstructorRepository.deleteById(id);
     }
 }

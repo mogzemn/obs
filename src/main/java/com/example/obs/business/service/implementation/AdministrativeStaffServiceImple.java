@@ -21,7 +21,6 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
 
     @Override
     public List<AdministrativeStaffResponse> getAll() {
-
         List<AdministrativeStaff> admin = administrativeStaffRepository.findAll();
 
         List<AdministrativeStaffResponse> responses = admin.stream()
@@ -32,7 +31,6 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
 
     @Override
     public AdministrativeStaffResponse getById(Long id) {
-
        AdministrativeStaff admin = administrativeStaffRepository.findById(id).orElseThrow();
 
        AdministrativeStaffResponse response = this.modelMapperService.forResponse()
@@ -42,7 +40,6 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
 
     @Override
     public void add(AdministrativeStaffCreateRequest administrativeStaffCreateRequest) {
-
         AdministrativeStaff admin = this.modelMapperService.forRequest()
                 .map(administrativeStaffCreateRequest,AdministrativeStaff.class);
 
@@ -52,7 +49,6 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
 
     @Override
     public void update(AdministrativeStaffUpdateRequest administrativeStaffUpdateRequest) {
-
         AdministrativeStaff admin = this.modelMapperService.forRequest()
                 .map(administrativeStaffUpdateRequest,AdministrativeStaff.class);
 
@@ -61,7 +57,6 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
 
     @Override
     public void delete(Long id) {
-
         this.administrativeStaffRepository.deleteById(id);
 
     }

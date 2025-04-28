@@ -21,7 +21,6 @@ public class AcademicServiceImpl implements AcademicService {
 
     @Override
     public List<AcademicResponse> getAll() {
-
         List<Academic> academics = academicRepository.findAll();
 
         List<AcademicResponse> academicResponses = academics.stream()
@@ -51,7 +50,6 @@ public class AcademicServiceImpl implements AcademicService {
 
     @Override
     public void update(AcademicUpdateRequest academicUpdateRequest) {
-
         Academic academic = this.modelMapperService.forRequest()
                 .map(academicUpdateRequest, Academic.class);
 
@@ -61,7 +59,6 @@ public class AcademicServiceImpl implements AcademicService {
 
     @Override
     public void delete(Long id) {
-
         this.academicRepository.deleteById(id);
     }
 }

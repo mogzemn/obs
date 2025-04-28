@@ -8,7 +8,6 @@ import com.example.obs.core.utilities.mappers.ModelMapperService;
 import com.example.obs.dateAccess.UserRepository;
 import com.example.obs.model.entity.User;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

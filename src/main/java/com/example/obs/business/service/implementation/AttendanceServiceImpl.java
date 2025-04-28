@@ -22,9 +22,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<AttendanceResponse> getAll() {
-
         List<Attendance> attendances = attendanceRepository.findAll();
-
 
         List<AttendanceResponse> responses = attendances.stream()
                 .map(attendance -> modelMapperService.forResponse()
@@ -35,7 +33,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public AttendanceResponse getById(Long id) {
-
         Attendance attendance = attendanceRepository.findById(id).orElseThrow();
 
         AttendanceResponse response = modelMapperService.forResponse()
@@ -47,7 +44,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void add(AttendanceCreateRequest attendanceCreateRequest) {
-
         Attendance attendance = modelMapperService.forRequest()
                 .map(attendanceCreateRequest, Attendance.class);
 
@@ -56,7 +52,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void update(AttendanceUpdateRequest attendanceUpdateRequest) {
-
         Attendance attendance = modelMapperService.forRequest()
                 .map(attendanceUpdateRequest, Attendance.class);
 
@@ -65,7 +60,6 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void delete(Long id) {
-
         attendanceRepository.deleteById(id);
     }
 }
