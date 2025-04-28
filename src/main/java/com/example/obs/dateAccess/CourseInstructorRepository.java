@@ -1,4 +1,9 @@
 package com.example.obs.dateAccess;
 
-public interface CourseInstructorRepository {
+import com.example.obs.model.entity.CourseInstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CourseInstructorRepository extends JpaRepository<CourseInstructor, Long> {
 }
