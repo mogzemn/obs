@@ -17,7 +17,7 @@ public class DepartmentCreateRequest {
     private String departmentName;
 
     @NotBlank(message = "Bölüm kodu boş olamaz")
-    @Size(max = 6, message = "Bölüm kodu 6 karakterden fazla olamaz")
+    @Size(min = 3, max = 3, message = "Bölüm kodu 3 karakterden oluşmalıdır")
     private String departmentCode;
 
     @NotNull(message = "Fakülte ID boş olamaz")

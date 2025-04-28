@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 public class CourseCreateRequest {
 
     @NotBlank(message = "Ders kodu boş olamaz")
-    @Size(max = 20, message = "Ders kodu 20 karakterden fazla olamaz")
+    @Size(min = 6,max = 6, message = "Ders kodu 6 karakterden oluşmalıdır")
     private String courseCode;
 
     @NotBlank(message = "Ders adı boş olamaz")
-    @Size(max = 100, message = "Ders adı 100 karakterden fazla olamaz")
+    @Size(max = 50, message = "Ders adı 50 karakterden fazla olamaz")
     private String courseName;
 
     @NotNull(message = "Kredi sayısı boş olamaz")

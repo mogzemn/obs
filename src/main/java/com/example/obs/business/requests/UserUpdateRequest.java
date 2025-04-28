@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserUpdateRequest {
 
-    @Size(min = 11, message = "Şifre en az 11 karakter olmalıdır")
+    @Size(min = 11, max = 100, message = "Şifre en az 11 ,en fazla 100 karakter olmalıdır")
     private String password;
 
     @Size(max = 50, message = "Ad 50 karakterden fazla olamaz")

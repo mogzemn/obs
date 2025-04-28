@@ -21,6 +21,6 @@ public class AcademicCreateRequest {
     private Long departmentId;
 
     @NotBlank(message = "Sicil numarası boş olamaz")
-    @Size(max = 20, message = "Sicil numarası 20 karakterden fazla olamaz")
+    @Size(max = 11, message = "Sicil numarası 11 karakterden fazla olamaz")
     private String registrationNumber;
 }

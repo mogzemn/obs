@@ -19,7 +19,7 @@ public class Department {
     @Column(nullable = false, length = 100)
     private String departmentName;
 
-    @Column(nullable = false, unique = true, length = 6)
+    @Column(nullable = false, unique = true, length = 3)
     private String departmentCode;
 
     @ManyToOne

@@ -20,7 +20,7 @@ public class AdministrativeStaff {
     @JoinColumn(name = "user_id", unique = true, nullable = false)
     private User user;
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 11)
     private String staffNumber;
 
     @Column(length = 255)

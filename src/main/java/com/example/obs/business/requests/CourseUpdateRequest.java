@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CourseUpdateRequest {
 
-    @Size(max = 20, message = "Ders kodu 20 karakterden fazla olamaz")
+    @Size(min = 6, max = 6, message = "Ders kodu 6 karakterden oluşmalıdır")
     private String courseCode;
 
-    @Size(max = 100, message = "Ders adı 100 karakterden fazla olamaz")
+    @Size(max = 50, message = "Ders adı 50 karakterden fazla olamaz")
     private String courseName;
 
     @Min(value = 1, message = "Kredi sayısı en az 1 olmalıdır")

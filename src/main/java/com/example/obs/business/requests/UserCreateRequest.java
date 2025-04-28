@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class UserCreateRequest {
 
     @NotBlank(message = "Şifre alanı boş olamaz")
-    @Size(min = 11, message = "Şifre en az 11 karakter olmalıdır")
+    @Size(min = 11,max = 100, message = "Şifre en az 11 ,en fazla 100 karakter olmalıdır")
     private String password;
 
     @NotBlank(message = "Ad alanı boş olamaz")

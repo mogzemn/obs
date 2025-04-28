@@ -24,6 +24,6 @@ public class Academic {
     @JoinColumn(name = "department_id", nullable = false)
     private Department department;
 
-    @Column(nullable = false, unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 11)
     private String registrationNumber;
 }

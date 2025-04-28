@@ -1,6 +1,7 @@
 package com.example.obs.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
+    @Size(min = 11 ,max =100)
     private String password;
 
     @Column(nullable = false, length = 50)

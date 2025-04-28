@@ -13,7 +13,7 @@ public class DepartmentUpdateRequest {
     @Size(max = 100, message = "Bölüm adı 100 karakterden fazla olamaz")
     private String departmentName;
 
-    @Size(max = 6, message = "Bölüm kodu 6 karakterden fazla olamaz")
+    @Size(min = 3, max = 3, message = "Bölüm kodu 3 karakterden oluşmalıdır")
     private String departmentCode;
 
     private Long facultyId;

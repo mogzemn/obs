@@ -18,7 +18,7 @@ public class AdministrativeStaffCreateRequest {
     private UserCreateRequest user;
 
     @NotBlank(message = "Personel numarası boş olamaz")
-    @Size(max = 20, message = "Personel numarası 20 karakterden fazla olamaz")
+    @Size(max = 11, message = "Personel numarası 11 karakterden fazla olamaz")
     private String staffNumber;
 
     @Size(max = 255, message = "İş unvanı 255 karakterden fazla olamaz")
