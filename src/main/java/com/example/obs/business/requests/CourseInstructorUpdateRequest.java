@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CourseInstructorUpdateRequest {
 
+    private Long id;
+
     private Long academicId;
 
     private Boolean isActive;

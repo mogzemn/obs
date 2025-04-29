@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GradeUpdateRequest {
+    private Long id;
 
     @DecimalMin(value = "0.0", message = "Vize notu 0'dan küçük olamaz")
     @DecimalMax(value = "100.0", message = "Vize notu 100'den büyük olamaz")

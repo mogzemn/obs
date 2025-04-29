@@ -39,7 +39,7 @@ public class GradesController {
         gradeUpdateRequest.setId(id);
         this.gradeService.update(gradeUpdateRequest);
     }
-    
+
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {

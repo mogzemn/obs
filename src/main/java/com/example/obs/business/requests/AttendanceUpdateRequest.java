@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AttendanceUpdateRequest {
+    private Long id;
 
     @DecimalMin(value = "0.0", message = "Devamsızlık süresi 0'dan küçük olamaz")
     private BigDecimal absenceDuration;

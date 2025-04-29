@@ -35,7 +35,7 @@ public class AttendancesController {
 
     @PutMapping("/{id}")
     public void update(@PathVariable Long id, @RequestBody AttendanceUpdateRequest attendanceUpdateRequest) {
-        attendanceUpdateRequest.setId(id)
+        attendanceUpdateRequest.setId(id);
         this.attendanceService.update(attendanceUpdateRequest);
     }
 

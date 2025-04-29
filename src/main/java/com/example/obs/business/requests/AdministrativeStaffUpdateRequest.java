@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AdministrativeStaffUpdateRequest {
 
+    private Long id;
     @Valid
     private UserUpdateRequest user;
 
