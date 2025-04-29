@@ -17,7 +17,7 @@ public class DepartmentUpdateRequest {
     @Size(max = 100, message = "Bölüm adı 100 karakterden fazla olamaz")
     private String departmentName;
 
-    @Size(min = 3, max = 3, message = "Bölüm kodu tam olarak 3 karakter olmalıdır")
+    @Size(min = 2, max = 2, message = "Bölüm kodu tam olarak 2 karakter olmalıdır")
     @Pattern(regexp = "^[0-9]+$", message = "Bölüm kodu sadece rakamlardan oluşmalıdır")
     private String departmentCode;
 
