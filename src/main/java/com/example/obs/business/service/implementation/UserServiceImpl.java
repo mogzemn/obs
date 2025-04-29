@@ -21,10 +21,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserResponse> getAll() {
-
-
-
-
         List<User> users = userRepository.findAll();
 
         List<UserResponse> responses = users.stream()
