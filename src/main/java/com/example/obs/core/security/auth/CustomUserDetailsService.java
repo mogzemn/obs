@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         List<SimpleGrantedAuthority> authorities;
 
         // Kullanıcı türüne göre rol ataması
-        if (user.isAdmin()) {
+        if (Boolean.TRUE.equals(user.getIsAdmin())) {
             authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"));
         } else if (user.getAcademic() != null) {
             authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ACADEMIC"));
@@ -44,10 +44,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
-                user.isActive(),
+                Boolean.TRUE.equals(user.getIsActive()),
                 true,
                 true,
-                user.hasLoginPermission(),
+                Boolean.TRUE.equals(user.getHasLoginPermission()),
                 authorities);
     }
 }

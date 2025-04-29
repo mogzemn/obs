@@ -56,6 +56,8 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
+    @Column(nullable = false)
+    private Boolean isAdmin = false;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Student student;
@@ -66,6 +68,5 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private AdministrativeStaff administrativeStaff;
 
-    @Column(nullable = false)
-    private Boolean isAdmin = false;
+
 }

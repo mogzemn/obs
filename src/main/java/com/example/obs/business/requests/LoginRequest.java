@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+
 public class LoginRequest {
     @NotBlank(message = "E-posta adresi boş bırakılamaz")
     @Email(message = "Geçerli bir e-posta adresi girmelisiniz")
