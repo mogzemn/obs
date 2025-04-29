@@ -3,7 +3,6 @@ package com.example.obs.business.service;
 import com.example.obs.business.requests.StudentCreateRequest;
 import com.example.obs.business.requests.StudentUpdateRequest;
 import com.example.obs.business.responses.StudentResponse;
-
 import java.util.List;
 
 public interface StudentService {

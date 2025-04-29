@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentCreateRequest {
+
     @Valid
     @NotNull(message = "Kullanıcı bilgileri boş olamaz")
     private UserCreateRequest user;
