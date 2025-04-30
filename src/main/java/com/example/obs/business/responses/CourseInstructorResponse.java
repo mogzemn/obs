@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CourseInstructorResponse {
-    private Long id;
+    private int id;
     private CourseResponse course;
     private AcademicResponse academic;
     private Semester semester;

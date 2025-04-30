@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
@@ -24,7 +23,7 @@ public class UsersController {
     }
 
     @GetMapping("/{id}")
-    public UserResponse getById(@PathVariable Long id) {
+    public UserResponse getById(@PathVariable int id) {
         return userService.getById(id);
     }
 
@@ -35,13 +34,13 @@ public class UsersController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody UserUpdateRequest userUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody UserUpdateRequest userUpdateRequest) {
         userUpdateRequest.setId(id);
         this.userService.update(userUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.userService.delete(id);
     }
 }

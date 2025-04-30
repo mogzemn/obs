@@ -6,7 +6,7 @@ import com.example.obs.business.requests.StudentUpdateRequest;
 import com.example.obs.business.responses.StudentResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
 import com.example.obs.core.utilities.numbergeneration.StudentNumberGenerator;
-import com.example.obs.dateAccess.StudentRepository;
+import com.example.obs.dataAccess.StudentRepository;
 import com.example.obs.model.entity.Student;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,7 +32,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public StudentResponse getById(Long id) {
+    public StudentResponse getById(int id) {
         Student student = studentRepository.findById(id).orElseThrow();
         StudentResponse response = this.modelMapperService.forResponse()
                 .map(student, StudentResponse.class);
@@ -60,7 +60,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.studentRepository.deleteById(id);
     }
 }

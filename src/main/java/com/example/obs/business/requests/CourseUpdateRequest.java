@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CourseUpdateRequest {
     @NotNull(message = "Ders ID'si boş olamaz")
-    private Long id;
+    private int id;
 
     @Size(max = 100, message = "Ders adı 100 karakterden fazla olamaz")
     private String courseName;
@@ -22,7 +22,7 @@ public class CourseUpdateRequest {
     @Pattern(regexp = "^[A-Z0-9]+$", message = "Ders kodu büyük harf ve rakamlardan oluşmalıdır")
     private String courseCode;
 
-    private Long departmentId;
+    private int departmentId;
 
     @Min(value = 1, message = "Kredi değeri en az 1 olmalıdır")
     private Integer credits;

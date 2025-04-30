@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface AdministrativeStaffService {
     List<AdministrativeStaffResponse> getAll();
-    AdministrativeStaffResponse getById(Long id);
+    AdministrativeStaffResponse getById(int id);
     void add(AdministrativeStaffCreateRequest administrativeStaffCreateRequest);
     void update(AdministrativeStaffUpdateRequest administrativeStaffUpdateRequest);
-    void delete(Long id);
+    void delete(int id);
 }

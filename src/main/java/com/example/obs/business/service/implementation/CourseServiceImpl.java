@@ -5,7 +5,7 @@ import com.example.obs.business.requests.CourseCreateRequest;
 import com.example.obs.business.requests.CourseUpdateRequest;
 import com.example.obs.business.responses.CourseResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.CourseRepository;
+import com.example.obs.dataAccess.CourseRepository;
 import com.example.obs.model.entity.Course;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

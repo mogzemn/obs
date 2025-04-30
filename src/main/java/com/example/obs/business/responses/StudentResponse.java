@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentResponse {
-    private Long id;
+    private int id;
     private UserResponse user;
     private Department department;
     private Academic advisor;

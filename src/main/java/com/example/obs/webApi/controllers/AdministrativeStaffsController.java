@@ -23,7 +23,7 @@ public class AdministrativeStaffsController {
     }
 
     @GetMapping("/{id}")
-    public AdministrativeStaffResponse getById(@PathVariable Long id) {
+    public AdministrativeStaffResponse getById(@PathVariable int id) {
         return administrativeStaffService.getById(id);
     }
 
@@ -34,13 +34,13 @@ public class AdministrativeStaffsController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody AdministrativeStaffUpdateRequest administrativeStaffUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody AdministrativeStaffUpdateRequest administrativeStaffUpdateRequest) {
         administrativeStaffUpdateRequest.setId(id);
         this.administrativeStaffService.update(administrativeStaffUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.administrativeStaffService.delete(id);
     }
 }

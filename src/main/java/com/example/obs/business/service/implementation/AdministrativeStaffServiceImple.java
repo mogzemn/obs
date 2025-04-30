@@ -5,7 +5,7 @@ import com.example.obs.business.requests.AdministrativeStaffCreateRequest;
 import com.example.obs.business.requests.AdministrativeStaffUpdateRequest;
 import com.example.obs.business.responses.AdministrativeStaffResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.AdministrativeStaffRepository;
+import com.example.obs.dataAccess.AdministrativeStaffRepository;
 import com.example.obs.model.entity.AdministrativeStaff;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,11 +30,11 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
     }
 
     @Override
-    public AdministrativeStaffResponse getById(Long id) {
-       AdministrativeStaff admin = administrativeStaffRepository.findById(id).orElseThrow();
+    public AdministrativeStaffResponse getById(int id) {
+        AdministrativeStaff admin = administrativeStaffRepository.findById(id).orElseThrow();
 
-       AdministrativeStaffResponse response = this.modelMapperService.forResponse()
-               .map(admin,AdministrativeStaffResponse.class);
+        AdministrativeStaffResponse response = this.modelMapperService.forResponse()
+                .map(admin,AdministrativeStaffResponse.class);
         return response;
     }
 
@@ -56,7 +56,7 @@ public class AdministrativeStaffServiceImple implements AdministrativeStaffServi
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.administrativeStaffRepository.deleteById(id);
 
     }

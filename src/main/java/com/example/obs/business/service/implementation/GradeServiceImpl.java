@@ -5,8 +5,9 @@ import com.example.obs.business.requests.GradeCreateRequest;
 import com.example.obs.business.requests.GradeUpdateRequest;
 import com.example.obs.business.responses.GradeResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.GradeRepository;
+import com.example.obs.dataAccess.GradeRepository;
 import com.example.obs.model.entity.Grade;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class GradeServiceImpl implements GradeService {
     }
 
     @Override
-    public GradeResponse getById(Long id) {
+    public GradeResponse getById(int id) {
         Grade grade = gradeRepository.findById(id).orElseThrow();
 
         GradeResponse response = this.modelMapperService.forResponse()
@@ -57,7 +58,7 @@ public class GradeServiceImpl implements GradeService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.gradeRepository.deleteById(id);
     }
 }

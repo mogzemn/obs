@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/course-instructors")
@@ -24,7 +23,7 @@ public class CourseInstructorsController {
     }
 
     @GetMapping("/{id}")
-    public CourseInstructorResponse getById(@PathVariable Long id) {
+    public CourseInstructorResponse getById(@PathVariable int id) {
         return courseInstructorService.getById(id);
     }
 

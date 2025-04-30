@@ -5,7 +5,7 @@ import com.example.obs.business.requests.AttendanceCreateRequest;
 import com.example.obs.business.requests.AttendanceUpdateRequest;
 import com.example.obs.business.responses.AttendanceResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.AttendanceRepository;
+import com.example.obs.dataAccess.AttendanceRepository;
 import com.example.obs.model.entity.Attendance;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,7 +32,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public AttendanceResponse getById(Long id) {
+    public AttendanceResponse getById(int id) {
         Attendance attendance = attendanceRepository.findById(id).orElseThrow();
 
         AttendanceResponse response = modelMapperService.forResponse()
@@ -59,7 +59,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         attendanceRepository.deleteById(id);
     }
 }

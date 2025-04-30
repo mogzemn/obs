@@ -5,7 +5,7 @@ import com.example.obs.business.requests.DepartmentCreateRequest;
 import com.example.obs.business.requests.DepartmentUpdateRequest;
 import com.example.obs.business.responses.DepartmentResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.DepartmentRepository;
+import com.example.obs.dataAccess.DepartmentRepository;
 import com.example.obs.model.entity.Department;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public DepartmentResponse getById(Long id) {
+    public DepartmentResponse getById(int id) {
         Department department = departmentRepository.findById(id).orElseThrow();
 
         DepartmentResponse response = this.modelMapperService.forResponse()
@@ -57,7 +57,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.departmentRepository.deleteById(id);
     }
 }

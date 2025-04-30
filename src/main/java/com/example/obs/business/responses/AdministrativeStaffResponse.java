@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdministrativeStaffResponse {
-    private Long id;
+    private int id;
     private UserResponse user;
     private String staffNumber;
     private String jobTitle;

@@ -23,7 +23,7 @@ public class AttendancesController {
     }
 
     @GetMapping("/{id}")
-    public AttendanceResponse getById(@PathVariable Long id) {
+    public AttendanceResponse getById(@PathVariable int id) {
         return attendanceService.getById(id);
     }
 
@@ -34,13 +34,13 @@ public class AttendancesController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody AttendanceUpdateRequest attendanceUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody AttendanceUpdateRequest attendanceUpdateRequest) {
         attendanceUpdateRequest.setId(id);
         this.attendanceService.update(attendanceUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.attendanceService.delete(id);
     }
 }

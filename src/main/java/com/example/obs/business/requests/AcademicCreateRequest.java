@@ -15,7 +15,7 @@ public class AcademicCreateRequest {
     private UserCreateRequest user;
 
     @NotNull(message = "Bölüm ID boş olamaz")
-    private Long departmentId;
+    private int departmentId;
 
     private String title;
 

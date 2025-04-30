@@ -5,7 +5,7 @@ import com.example.obs.business.requests.UserCreateRequest;
 import com.example.obs.business.requests.UserUpdateRequest;
 import com.example.obs.business.responses.UserResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.UserRepository;
+import com.example.obs.dataAccess.UserRepository;
 import com.example.obs.model.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponse getById(Long id) {
+    public UserResponse getById(int id) {
         User user = userRepository.findById(id).orElseThrow();
 
         UserResponse response = this.modelMapperService.forResponse()
@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.userRepository.deleteById(id);
     }
 }

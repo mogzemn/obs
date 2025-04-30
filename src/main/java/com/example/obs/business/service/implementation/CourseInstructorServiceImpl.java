@@ -5,7 +5,7 @@ import com.example.obs.business.requests.CourseInstructorCreateRequest;
 import com.example.obs.business.requests.CourseInstructorUpdateRequest;
 import com.example.obs.business.responses.CourseInstructorResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.CourseInstructorRepository;
+import com.example.obs.dataAccess.CourseInstructorRepository;
 import com.example.obs.model.entity.CourseInstructor;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -33,10 +33,8 @@ public class CourseInstructorServiceImpl implements CourseInstructorService {
     @Override
     public CourseInstructorResponse getById(Long id) {
         CourseInstructor courseInstructor = courseInstructorRepository.findById(id).orElseThrow();
-
-        CourseInstructorResponse response = this.courseInstructorRepository.findById(id)
-                .map(courseInstructorr -> this.modelMapperService.forResponse()
-                        .map(courseInstructorr, CourseInstructorResponse.class)).orElseThrow();
+        CourseInstructorResponse response = this.modelMapperService.forResponse()
+                .map(courseInstructor, CourseInstructorResponse.class);
 
         return response;
     }

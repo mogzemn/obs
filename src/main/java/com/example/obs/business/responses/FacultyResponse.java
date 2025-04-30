@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FacultyResponse {
-    private Long id;
+    private int id;
     private String facultyName;
     private String facultyCode;
     private AcademicResponse dean;

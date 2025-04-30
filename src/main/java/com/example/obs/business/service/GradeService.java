@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface GradeService {
     List<GradeResponse> getAll();
-    GradeResponse getById(Long id);
+    GradeResponse getById(int id);
     void add(GradeCreateRequest gradeCreateRequest);
     void update(GradeUpdateRequest gradeUpdateRequest);
-    void delete(Long id);
+    void delete(int id);
 }

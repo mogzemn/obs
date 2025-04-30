@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StudentUpdateRequest {
     @NotNull(message = "Öğrenci ID'si boş olamaz")
-    private Long id;
+    private int id;
 
     @Valid
     private UserUpdateRequest user;
 
-    private Long departmentId;
+    private int departmentId;
 
-    private Long advisorId;
+    private int advisorId;
 }

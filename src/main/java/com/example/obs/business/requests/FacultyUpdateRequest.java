@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FacultyUpdateRequest {
     @NotNull(message = "Fakülte ID'si boş olamaz")
-    private Long id;
+    private int id;
 
     @Size(max = 100, message = "Fakülte adı 100 karakterden fazla olamaz")
     private String facultyName;
@@ -21,7 +21,7 @@ public class FacultyUpdateRequest {
     @Pattern(regexp = "^[0-9]+$", message = "Fakülte kodu sadece rakamlardan oluşmalıdır")
     private String facultyCode;
 
-    private Long deanId;
+    private int deanId;
 
     private Boolean isActive;
 }

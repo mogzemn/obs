@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/api/grades")
@@ -24,7 +24,7 @@ public class GradesController {
     }
 
     @GetMapping("/{id}")
-    public GradeResponse getById(@PathVariable Long id) {
+    public GradeResponse getById(@PathVariable int id) {
         return gradeService.getById(id);
     }
 
@@ -35,14 +35,14 @@ public class GradesController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody GradeUpdateRequest gradeUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody GradeUpdateRequest gradeUpdateRequest) {
         gradeUpdateRequest.setId(id);
         this.gradeService.update(gradeUpdateRequest);
     }
 
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.gradeService.delete(id);
     }
 }

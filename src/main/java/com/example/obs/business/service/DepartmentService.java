@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface DepartmentService {
     List<DepartmentResponse> getAll();
-    DepartmentResponse getById(Long id);
+    DepartmentResponse getById(int id);
     void add(DepartmentCreateRequest departmentCreateRequest);
     void update(DepartmentUpdateRequest departmentUpdateRequest);
-    void delete(Long id);
+    void delete(int id);
 }

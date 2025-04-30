@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DepartmentResponse {
-    private Long id;
+    private int id;
     private String departmentName;
     private String departmentCode;
     private FacultyResponse faculty;

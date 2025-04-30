@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface CourseService {
     List<CourseResponse> getAll();
-    CourseResponse getById(Long id);
+    CourseResponse getById(int id);
     void add(CourseCreateRequest courseCreateRequest);
     void update(CourseUpdateRequest courseUpdateRequest);
-    void delete(Long id);
+    void delete(int id);
 }

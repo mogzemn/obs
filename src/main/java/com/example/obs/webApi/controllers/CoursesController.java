@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/api/courses")
@@ -24,7 +24,7 @@ public class CoursesController {
     }
 
     @GetMapping("/{id}")
-    public CourseResponse getById(@PathVariable Long id) {
+    public CourseResponse getById(@PathVariable int id) {
         return courseService.getById(id);
     }
 
@@ -35,13 +35,13 @@ public class CoursesController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody CourseUpdateRequest courseUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody CourseUpdateRequest courseUpdateRequest) {
         courseUpdateRequest.setId(id);
         this.courseService.update(courseUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.courseService.delete(id);
     }
 }

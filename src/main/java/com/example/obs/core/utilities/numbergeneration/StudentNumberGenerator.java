@@ -1,7 +1,7 @@
 package com.example.obs.core.utilities.numbergeneration;
 
-import com.example.obs.dateAccess.DepartmentRepository;
-import com.example.obs.dateAccess.StudentRepository;
+import com.example.obs.dataAccess.DepartmentRepository;
+import com.example.obs.dataAccess.StudentRepository;
 import com.example.obs.model.entity.Department;
 import com.example.obs.model.entity.Student;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,7 @@ public class StudentNumberGenerator {
     }
 
 
-    public String generateStudentNumber(Long departmentId) {
+    public String generateStudentNumber(int departmentId) {
         StringBuilder studentNumber = new StringBuilder();
 
 

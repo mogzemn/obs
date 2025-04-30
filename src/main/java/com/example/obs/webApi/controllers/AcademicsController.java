@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/academics")
@@ -24,7 +23,7 @@ public class AcademicsController {
     }
 
     @GetMapping("/{id}")
-    public AcademicResponse getById(@PathVariable Long id) {
+    public AcademicResponse getById(@PathVariable int id) {
         return academicService.getById(id);
     }
 
@@ -35,13 +34,13 @@ public class AcademicsController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody AcademicUpdateRequest academicUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody AcademicUpdateRequest academicUpdateRequest) {
         academicUpdateRequest.setId(id);
         this.academicService.update(academicUpdateRequest);
     }
     
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.academicService.delete(id);
     }
 }

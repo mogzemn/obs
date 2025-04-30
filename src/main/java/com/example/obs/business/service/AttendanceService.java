@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface AttendanceService {
     List<AttendanceResponse> getAll();
-    AttendanceResponse getById(Long id);
+    AttendanceResponse getById(int id);
     void add(AttendanceCreateRequest attendanceCreateRequest);
     void update(AttendanceUpdateRequest attendanceUpdateRequest);
-    void delete(Long id);
+    void delete(int id);
 }

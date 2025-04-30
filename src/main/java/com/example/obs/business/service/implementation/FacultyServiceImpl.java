@@ -5,7 +5,7 @@ import com.example.obs.business.requests.FacultyCreateRequest;
 import com.example.obs.business.requests.FacultyUpdateRequest;
 import com.example.obs.business.responses.FacultyResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.FacultyRepository;
+import com.example.obs.dataAccess.FacultyRepository;
 import com.example.obs.model.entity.Faculty;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class FacultyServiceImpl implements FacultyService {
     }
 
     @Override
-    public FacultyResponse getById(Long id) {
+    public FacultyResponse getById(int id) {
         Faculty faculty = facultyRepository.findById(id).orElseThrow();
 
         FacultyResponse response = this.modelMapperService.forResponse()
@@ -57,7 +57,7 @@ public class FacultyServiceImpl implements FacultyService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.facultyRepository.deleteById(id);
     }
 }

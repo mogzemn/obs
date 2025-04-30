@@ -4,12 +4,12 @@ import com.example.obs.business.requests.DepartmentCreateRequest;
 import com.example.obs.business.requests.DepartmentUpdateRequest;
 import com.example.obs.business.responses.DepartmentResponse;
 import com.example.obs.business.service.DepartmentService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/departments")
@@ -24,7 +24,7 @@ public class DepartmentsController {
     }
 
     @GetMapping("/{id}")
-    public DepartmentResponse getById(@PathVariable Long id) {
+    public DepartmentResponse getById(@PathVariable int id) {
         return departmentService.getById(id);
     }
 
@@ -35,13 +35,13 @@ public class DepartmentsController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody DepartmentUpdateRequest departmentUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody DepartmentUpdateRequest departmentUpdateRequest) {
         departmentUpdateRequest.setId(id);
         this.departmentService.update(departmentUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.departmentService.delete(id);
     }
 }

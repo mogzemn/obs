@@ -5,7 +5,7 @@ import com.example.obs.business.requests.AcademicCreateRequest;
 import com.example.obs.business.requests.AcademicUpdateRequest;
 import com.example.obs.business.responses.AcademicResponse;
 import com.example.obs.core.utilities.mappers.ModelMapperService;
-import com.example.obs.dateAccess.AcademicRepository;
+import com.example.obs.dataAccess.AcademicRepository;
 import com.example.obs.model.entity.Academic;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class AcademicServiceImpl implements AcademicService {
     }
 
     @Override
-    public AcademicResponse getById(Long id) {
+    public AcademicResponse getById(int id) {
         Academic academic = academicRepository.findById(id).orElseThrow();
 
         AcademicResponse academicResponse = this.modelMapperService.forResponse()
@@ -58,7 +58,7 @@ public class AcademicServiceImpl implements AcademicService {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         this.academicRepository.deleteById(id);
     }
 }

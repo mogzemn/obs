@@ -14,13 +14,13 @@ import java.math.BigDecimal;
 public class AttendanceCreateRequest {
 
     @NotNull(message = "Ders ID boş olamaz")
-    private Long courseId;
+    private int courseId;
 
     @NotNull(message = "Öğrenci ID boş olamaz")
-    private Long studentId;
+    private int studentId;
 
     @NotNull(message = "Akademisyen ID boş olamaz")
-    private Long academicId;
+    private int academicId;
 
     @NotNull(message = "Dönem bilgisi boş olamaz")
     private Semester semester;

@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/students")
@@ -24,7 +23,7 @@ public class StudentsController {
     }
 
     @GetMapping("/{id}")
-    public StudentResponse getById(@PathVariable Long id) {
+    public StudentResponse getById(@PathVariable int id) {
         return studentService.getById(id);
     }
 
@@ -35,13 +34,13 @@ public class StudentsController {
     }
 
     @PutMapping("/{id}")
-    public void update(@PathVariable Long id, @RequestBody StudentUpdateRequest studentUpdateRequest) {
+    public void update(@PathVariable int id, @RequestBody StudentUpdateRequest studentUpdateRequest) {
         studentUpdateRequest.setId(id);
         this.studentService.update(studentUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
+    public void delete(@PathVariable int id) {
         this.studentService.delete(id);
     }
 }
