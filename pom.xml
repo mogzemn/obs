@@ -9,9 +9,9 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>obs</artifactId>
+	<artifactId>obs1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>obs</name>
+	<name>obs1</name>
 	<description>ogrenci bilgi sistemi</description>
 	<url/>
 	<licenses>
